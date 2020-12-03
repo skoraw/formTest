@@ -2,6 +2,7 @@ package helpers;
 
 import base.TestBase;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -19,11 +20,13 @@ public class GlobalMethods extends TestBase {
 
     public void setInput(WebElement inputElement, String text) {
         wait.until(visibilityOf(inputElement));
+        scrollPage(inputElement);
         inputElement.clear();
         inputElement.sendKeys(text);
     }
 
     public void clickButton(WebElement buttonElement) {
+        scrollPage(buttonElement);
         wait.until(ExpectedConditions.elementToBeClickable(buttonElement)).click();
     }
 
@@ -46,5 +49,9 @@ public class GlobalMethods extends TestBase {
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
         return "username" + randomInt + "@cloudS.com";
+    }
+
+    public void scrollPage(WebElement webElement) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
     }
 }

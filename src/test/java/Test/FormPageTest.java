@@ -1,6 +1,6 @@
 package Test;
 
-import Pages.FormPage;
+import pages.FormPage;
 import base.TestBase;
 import helpers.GlobalMethods;
 import org.testng.Assert;
@@ -25,14 +25,10 @@ public class FormPageTest extends TestBase {
     }
 
     @Test(priority = 1)
-    public void fillAllFieldsInForm() {
-        formPage.setNameInput(testdata.getProperty("name"));
-        formPage.setMailInput(globalMethods.emailGenerator());
-        formPage.setTopicFromList(testdata.getProperty("topic"));
-        formPage.setTextInput(testdata.getProperty("text"));
+    public void fillAllTheFieldsErrorDisplay() {
+        formPage.fillAllFieldsInForm();
         globalMethods.takeScreenShot(1);
-        formPage.clickRodoButton();
-        formPage.clickSendButton();
+        Assert.assertTrue(formPage.FillAllFieldsValidation(), "Coś poszło nie tak i przeszło dalej :(");
     }
 
     @Test (priority = 2)
@@ -40,11 +36,4 @@ public class FormPageTest extends TestBase {
         Assert.assertTrue(formPage.captchaInputNotFilled(), "uzupełnione? :(");
         globalMethods.takeScreenShot(2);
     }
-
-    @Test(priority = 2)
-    public void fillAllTheFieldsErrorDisplay() {
-        Assert.assertTrue(formPage.FillAllFieldsValidation(), "Coś poszło nie tak i przeszło dalej :(");
-    }
-
-
 }

@@ -77,6 +77,6 @@ public class TestBase {
 
     public static void testEnds() {
         System.out.println("Testy zakończone");
-        driver.close();
+        driver.quit();
     }
 }

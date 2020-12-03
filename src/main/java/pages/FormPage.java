@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import base.TestBase;
 import helpers.GlobalMethods;
@@ -62,11 +62,9 @@ public class FormPage extends TestBase {
     }
 
     public void clickRodoButton() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sendButton);
         globalMethods.clickButton(rodoCheckBox);
     }
     public void clickSendButton() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sendButton);
         globalMethods.clickButton(sendButton);
     }
 
@@ -76,5 +74,16 @@ public class FormPage extends TestBase {
 
     public boolean captchaInputNotFilled() {
         return globalMethods.visibilityOfElement(captcha);
+    }
+
+    public void fillAllFieldsInForm() {
+        setNameInput(testdata.getProperty("name"));
+        setMailInput(globalMethods.emailGenerator());
+        setTopicFromList(testdata.getProperty("topic"));
+        setTextInput(testdata.getProperty("text"));
+
+        clickRodoButton();
+        clickSendButton();
+
     }
 }
