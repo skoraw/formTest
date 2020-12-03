@@ -1,4 +1,4 @@
-# Simple automated Test for fillinf a form on Cloud Services Page
+# Simple automated Test for fill in a form on Cloud Services Page
 
 Test write in Java with help of Selenium WebDriver, TestNG
 
