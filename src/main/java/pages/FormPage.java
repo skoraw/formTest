@@ -64,6 +64,7 @@ public class FormPage extends TestBase {
     public void clickRodoButton() {
         globalMethods.clickButton(rodoCheckBox);
     }
+
     public void clickSendButton() {
         globalMethods.clickButton(sendButton);
     }
@@ -81,9 +82,7 @@ public class FormPage extends TestBase {
         setMailInput(globalMethods.emailGenerator());
         setTopicFromList(testdata.getProperty("topic"));
         setTextInput(testdata.getProperty("text"));
-
         clickRodoButton();
         clickSendButton();
-
     }
 }

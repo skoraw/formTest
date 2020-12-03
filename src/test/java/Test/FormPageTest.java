@@ -31,7 +31,7 @@ public class FormPageTest extends TestBase {
         Assert.assertTrue(formPage.FillAllFieldsValidation(), "Coś poszło nie tak i przeszło dalej :(");
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     public void captchaFieldIsRequired() {
         Assert.assertTrue(formPage.captchaInputNotFilled(), "uzupełnione? :(");
         globalMethods.takeScreenShot(2);

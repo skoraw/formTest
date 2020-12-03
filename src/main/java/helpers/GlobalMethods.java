@@ -45,7 +45,8 @@ public class GlobalMethods extends TestBase {
             System.out.println(e.getMessage());
         }
     }
-    public String emailGenerator(){
+
+    public String emailGenerator() {
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
         return "username" + randomInt + "@cloudS.com";
