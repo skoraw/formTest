@@ -30,8 +30,8 @@ public class FormPageTest extends TestBase {
         formPage.setMailInput(globalMethods.emailGenerator());
         formPage.setTopicFromList(testdata.getProperty("topic"));
         formPage.setTextInput(testdata.getProperty("text"));
-        formPage.clickRodoButton();
         globalMethods.takeScreenShot(1);
+        formPage.clickRodoButton();
         formPage.clickSendButton();
     }
 
