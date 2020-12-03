@@ -11,3 +11,6 @@ U can change browser configuration in config.properties file in config directory
 The Task was to fill all the fields exept captcha field, after click on send button we should recive a massage that not all fields was filled.
 
 Screenshot of results are placed in resoureces folder as chromedriver
+
+### Running
+Run test with your IDE in src/main/test/java/Test/FormPageTest 
